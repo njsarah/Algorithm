@@ -1,0 +1,58 @@
+package com.Algorithm.Array;
+
+public class ArrayAlgorigthm {
+	
+	//查找最小的K个数
+	public void quickSelect(int[] data,int Rleft,int Rright)
+	{
+		int key = data[0];
+		int left = Rleft;
+		int right = Rright-1;
+		while(left<right)
+		{
+			while(left<right&&key<data[right]) right--;
+			if(left<right)
+			{
+				data[left]=data[right];
+			}
+			
+			while(left<right&&key>data[left]) left++;
+			if(left<right)
+			{
+				data[right] = data[left];
+			}
+		}
+		data[right] = key;
+	}
+	public void MinK(int[] data,int k)
+	{
+				
+	}
+	//查找和为定值的数,时间复杂度O(N),数组都是有序的
+	public boolean TwoSum(int[] data,int sum)
+	{
+		int left = 0;
+		int right = data.length-1;
+		while(left<right)
+		{
+			int value = data[left]+data[right];
+			if(value==sum)
+			{
+				return true;
+			}
+			else
+			{
+				if(value<sum)
+				{
+					left++;
+				}
+				else
+				{
+					right--;
+				}
+			}
+		}
+		return false;
+	}
+
+}

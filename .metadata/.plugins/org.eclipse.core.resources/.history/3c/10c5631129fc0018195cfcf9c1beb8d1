@@ -1,0 +1,9 @@
+package com.Algorithm.String;
+
+public class FullyArranged {
+	public boolean nextPermutation(String text)
+	{
+		return true;
+	}
+
+}

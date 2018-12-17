@@ -71,5 +71,36 @@ public class ArrayAlgorithm {
 		}
 		return false;
 	}
+	public void swap(int[] data,int ele1,int ele2)
+	{
+		int temp = data[ele1];
+		data[ele1] = data[ele2];
+		data[ele2] = temp;
+	}
+	//荷兰国旗，数组中仅有0,1,2三种数值且无序
+	public void DuchTricolorFlag(int[] data)
+	{
+		int cur = 0;
+		int begin = 0;
+		int end = data.length-1;
+		while(cur<=end)
+		{
+			if(data[cur]==1)
+			{
+				cur++;
+			}else if(data[cur]==0)
+			{
+				swap(data,begin,cur);
+				begin++;
+				cur++;
+				
+			}
+			else
+			{
+				swap(data,cur,end);
+				end--;
+			}
+		}
+	}
 
 }
